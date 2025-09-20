@@ -1,0 +1,51 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Flores para ti 🌻</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fdf6e3;
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .flower {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #fdd835 30%, #ffeb3b 70%);
+      border-radius: 50%;
+      position: absolute;
+      bottom: -120px;
+      animation: bloom 6s ease-out forwards;
+    }
+
+    .flower::after {
+      content: '';
+      position: absolute;
+      background: #795548;
+      width: 10px;
+      height: 60px;
+      bottom: -60px;
+      left: 45px;
+      border-radius: 5px;
+    }
+
+    @keyframes bloom {
+      0% {
+        transform: scale(0) translateY(0);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) translateY(-200px);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    function createFlower() {
